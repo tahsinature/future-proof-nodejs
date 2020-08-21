@@ -21,7 +21,7 @@ This repo can be used as a starting point for backend development with Nodejs. I
 
 A few things to note in the project:
 
-- **[Github Actions Workflows](https://github.com/tahsinature/future-proof-nodejs/tree/master/. /workflows)** - Pre-configured Github Actions to run automated builds and publish image to Github Packages
+- **[Github Actions Workflows](https://github.com/tahsinature/future-proof-nodejs/tree/master/.github/workflows)** - Pre-configured Github Actions to run automated builds and publish image to Github Packages
 - **[Dockerfile](https://github.com/tahsinature/future-proof-nodejs/blob/master/Dockerfile)** - Dockerfile to generate docker builds.
 - **[docker-compose](https://github.com/tahsinature/future-proof-nodejs/blob/master/docker-compose.yml)** - Docker compose script to start service in production mode.
 - **[Containerized Mongo for development](#development)** - Starts a local mongo container with data persistence across runs.
