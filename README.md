@@ -1,16 +1,18 @@
 <a href="https://travis-ci.org/tahsinature/future-proof-nodejs">
-<img src="https://travis-ci.org/tahsinature/future-proof-nodejs.svg?branch=master" alt="Build Status" />
+  <img src="https://travis-ci.org/tahsinature/future-proof-nodejs.svg?branch=master" alt="Build Status" />
 </a>
-
-[![dependencies Status](https://david-dm.org/tahsinature/future-proof-nodejs/status.svg)](https://david-dm.org/tahsinature/future-proof-nodejs)
-
-[![devDependencies Status](https://david-dm.org/tahsinature/future-proof-nodejs/dev-status.svg)](https://david-dm.org/tahsinature/future-proof-nodejs?type=dev)
-
+<a href="https://david-dm.org/tahsinature/future-proof-nodejs">
+  <img src="https://david-dm.org/tahsinature/future-proof-nodejs/status.svg" alt="dependencies Status" />
+</a>
+<a href="https://david-dm.org/tahsinature/future-proof-nodejs?type=dev">
+  <img src="https://david-dm.org/tahsinature/future-proof-nodejs/dev-status.svg" alt="devDependencies Status" />
+</a>
 <a href="https://snyk.io//test/github/tahsinature/future-proof-nodejs?targetFile=package.json">
-<img src="https://snyk.io//test/github/tahsinature/future-proof-nodejs/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io//test/github/tahsinature/future-proof-nodejs?targetFile=package.json" style="max-width:100%;">
+  <img src="https://snyk.io//test/github/tahsinature/future-proof-nodejs/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io//test/github/tahsinature/future-proof-nodejs?targetFile=package.json" style="max-width:100%;">
 </a>
-
-![Publish latest image](https://github.com/tahsinature/future-proof-nodejs/workflows/Publish%20latest%20image/badge.svg)
+<a href="#">
+  <img src="https://github.com/tahsinature/future-proof-nodejs/workflows/Publish%20latest%20image/badge.svg" alt="Publish latest image" />
+</a>
 
 # Express TypeScript Boilerplate
 
