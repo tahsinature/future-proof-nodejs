@@ -35,14 +35,6 @@ A few things to note in the project:
 
 ## Installation
 
-### Using `curl`
-
-```
-$ bash <(curl -s https://raw.githubusercontent.com/tahsinature/public/master/scripts/generate-express-ts-app.sh)
-```
-
-### Manual Method
-
 #### 1. Clone this repo
 
 ```
