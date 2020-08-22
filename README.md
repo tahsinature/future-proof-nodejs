@@ -82,7 +82,7 @@ Running the above commands results in
 #### 1. Build and run without Docker
 
 ```
-$ npm run build && npm run start
+$ npm run build && npm start
 ```
 
 #### 2. Run with docker
