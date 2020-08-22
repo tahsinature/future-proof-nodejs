@@ -1,10 +1,10 @@
 {
-  "name": "express-typescript-boilerplate",
+  "name": "future-proof-nodejs",
   "version": "1.0.0",
   "description": "A minimalist TypeScript-Express boilerplate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tahsinature/express-typescript-boilerplate.git"
+    "url": "git+https://github.com/tahsinature/future-proof-nodejs.git"
   },
   "keywords": [
     "TypeScript",
