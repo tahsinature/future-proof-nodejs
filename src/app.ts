@@ -4,9 +4,9 @@ import path from 'path'
 import express, { Request, Response, NextFunction } from 'express'
 import ApplicationError from './errors/application-error'
 import routes from './routes'
+import MongoConnection from './mongo-connection'
 
 const app = express()
-
 app.use(compression())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,4 +26,17 @@ app.use((err: ApplicationError, req: Request, res: Response, next: NextFunction)
   })
 })
 
-export default app
+class Container {
+  public app = app
+  private mongoConnection = new MongoConnection(process.env.MONGO_URL)
+
+  public async load() {
+    await this.mongoConnection.connect()
+  }
+
+  public async stop() {
+    await this.mongoConnection.close()
+  }
+}
+
+export = Container

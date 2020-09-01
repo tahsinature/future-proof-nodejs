@@ -15,13 +15,12 @@
     "docker"
   ],
   "author": "Tahsin @tahsinature",
-  "main": "dist/index.js",
   "scripts": {
-    "postinstall": "chmod +x ./scripts/dev.sh",
-    "build": "tsc",
-    "lint": "npx prettier --write src/**/*",
+    "postinstall": "chmod +x ./scripts/dev.sh ./bin/run",
+    "build": "ttsc",
+    "lint": "prettier --write ./src/**/*",
     "dev": "./scripts/dev.sh",
-    "start": "node dist/server.js",
+    "start": "./bin/run",
     "test": "jest"
   },
   "dependencies": {
@@ -44,6 +43,7 @@
     "@types/node": "14.0.13",
     "@types/supertest": "2.0.9",
     "@types/swagger-ui-express": "4.1.2",
+    "@zerollup/ts-transform-paths": "^1.7.18",
     "jest": "26.1.0",
     "jest-express": "1.12.0",
     "mockingoose": "2.13.2",
@@ -51,6 +51,7 @@
     "supertest": "4.0.2",
     "ts-jest": "26.1.1",
     "ts-node": "^9.0.0",
+    "ttypescript": "^1.5.11",
     "typescript": "3.9.5"
   },
   "license": "MIT",
