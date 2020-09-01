@@ -27,8 +27,8 @@ app.use((err: ApplicationError, req: Request, res: Response, next: NextFunction)
 })
 
 class Container {
-  public app = app
-  private mongoConnection = new MongoConnection(process.env.MONGO_URL)
+  public readonly app = app
+  private readonly mongoConnection = new MongoConnection(process.env.MONGO_URL)
 
   public async load() {
     await this.mongoConnection.connect()
