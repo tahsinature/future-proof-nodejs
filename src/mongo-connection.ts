@@ -2,11 +2,6 @@ import mongoose, { ConnectionOptions } from 'mongoose'
 import logger from './logger'
 ;(<any>mongoose).Promise = global.Promise
 
-/** Callback for establishing or re-stablishing mongo connection */
-interface IOnConnectedCallback {
-  (): void
-}
-
 /**
  * A Mongoose Connection wrapper class to
  * help with mongo connection issues.
@@ -18,9 +13,6 @@ interface IOnConnectedCallback {
 export default class MongoConnection {
   /** URL to access mongo */
   private readonly mongoUrl: string
-
-  /** Callback when mongo connection is established or re-established */
-  private onConnectedCallback: IOnConnectedCallback
 
   /**
    * Internal flag to check if connection established for
@@ -38,7 +30,6 @@ export default class MongoConnection {
   /**
    * Start mongo connection
    * @param mongoUrl MongoDB URL
-   * @param onConnectedCallback callback to be called when mongo connection is successful
    */
   constructor(mongoUrl: string) {
     if (process.env.NODE_ENV === 'development') {
@@ -74,7 +65,6 @@ export default class MongoConnection {
   private onConnected = () => {
     logger.log({ level: 'info', message: `Connected to MongoDB at ${this.mongoUrl}` })
     this.isConnectedBefore = true
-    this.onConnectedCallback()
   }
 
   /** Handler called when mongo gets re-connected to the database */
@@ -83,7 +73,6 @@ export default class MongoConnection {
       level: 'info',
       message: 'Reconnected to MongoDB',
     })
-    this.onConnectedCallback()
   }
 
   /** Handler called for mongo connection errors */

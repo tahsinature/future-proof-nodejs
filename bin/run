@@ -11,13 +11,12 @@ if (dev) {
   workDir = 'src'
 }
 
-// const Application = require(`../${workDir}/app/server/application`)
-// const Server = require(`../${workDir}/app/server/server`)
+const Container = require(`../${workDir}/container`)
+const Server = require(`../${workDir}/server`)
 
-// const container = new Application()
-// const { app } = container
+const container = new Container()
 
-// container.load().then(async () => {
-//   const server = new Server(app)
-//   await server.run()
-// })
+container.load().then(async () => {
+  const server = new Server(container)
+  await server.run()
+})

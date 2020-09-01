@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 const result = dotenv.config()
 if (result.error) dotenv.config({ path: '.env.default' })
 
-import Container from './app'
+import Container from './container'
 import logger from './logger'
 
 class Server {
@@ -15,7 +15,13 @@ class Server {
   }
 
   public async run() {
-    this.container.app.listen()
+    const port = process.env.PORT || 3000
+    const server = this.container.app.listen(port)
+
+    server.on('listening', () => {
+      console.log('\x1b[36m%s\x1b[0m', `🌏 Express server started at http://localhost:${port}`)
+      console.log('\x1b[36m%s\x1b[0m', `⚙️  Swagger UI hosted at http://localhost:${port}/dev/api-docs`)
+    })
   }
 }
 
