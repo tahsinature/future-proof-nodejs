@@ -25,7 +25,7 @@ A few things to note in the project:
 - **[docker-compose](https://github.com/tahsinature/future-proof-nodejs/blob/master/docker-compose.yml)** - Docker compose script to start service in production mode.
 - **[Containerized Mongo for development](#development)** - Starts a local mongo container with data persistence across runs.
 - **[Mongo Connection Helper](https://github.com/tahsinature/future-proof-nodejs/blob/master/src/mongo-connection.ts)** - A helper class to connect to MongoDB reliably.
-- **Joi** - For declarative payload validation
+- **[Joi](https://github.com/sideway/joi)** - For declarative payload validation
 - **[Middleware for easier async/await](https://github.com/tahsinature/future-proof-nodejs/blob/master/src/middleware/request-middleware.ts)** - Catches errors from routes and throws them to express error handler to prevent app crash due to uncaught errors.
 - **[OpenAPI 3.0 Spec](https://github.com/tahsinature/future-proof-nodejs/blob/master/openapi.json)** - A starter template to get started with API documentation using OpenAPI 3.0. This API spec is also available when running the development server at `http://localhost:3000/dev/api-docs`
 - **[.env file for configuration](#environment)** - Change server config like app port, mongo url etc
