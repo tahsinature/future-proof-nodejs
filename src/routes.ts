@@ -1,10 +1,9 @@
 import { Router } from 'express'
-import swaggerUi from 'swagger-ui-express'
-import apiSpec from '../openapi.json'
+import swaggerUi, { SwaggerUiOptions } from 'swagger-ui-express'
+const apiSpec = require('@root/openapi.json')
+import * as BookController from '@src/controllers/book'
 
-import * as BookController from './controllers/book'
-
-const swaggerUiOptions = {
+const swaggerUiOptions: SwaggerUiOptions = {
   customCss: '.swagger-ui .topbar { display: none }',
 }
 

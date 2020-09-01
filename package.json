@@ -17,7 +17,7 @@
   "author": "Tahsin @tahsinature",
   "scripts": {
     "postinstall": "chmod +x ./scripts/dev.sh ./bin/run",
-    "build": "ttsc",
+    "build": "rm -rf dist && ttsc",
     "lint": "prettier --write ./src/**/*",
     "dev": "./scripts/dev.sh",
     "start": "./bin/run",

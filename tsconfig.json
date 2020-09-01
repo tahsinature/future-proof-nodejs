@@ -10,7 +10,8 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
-      "@root/*": ["./*"]
+      "@root/*": ["./*"],
+      "@src/*": ["./src/*"]
     },
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
