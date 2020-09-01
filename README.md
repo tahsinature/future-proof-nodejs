@@ -30,8 +30,8 @@ A few things to note in the project:
 - **[OpenAPI 3.0 Spec](https://github.com/tahsinature/future-proof-nodejs/blob/master/openapi.json)** - A starter template to get started with API documentation using OpenAPI 3.0. This API spec is also available when running the development server at `http://localhost:3000/dev/api-docs`
 - **[.env file for configuration](#environment)** - Change server config like app port, mongo url etc
 - **[Winston Logger](#logging)** - Uses winston as the logger for the application.
-- **Prettier** - Prettier is configured for linting.
-- **Jest** - Using Jest for running test cases
+- **[Prettier](https://prettier.io/)** - Prettier is configured for linting.
+- **[Jest](https://github.com/facebook/jest)** - Using Jest for running test cases
 
 ## Installation
 
