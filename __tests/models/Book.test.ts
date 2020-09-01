@@ -1,22 +1,25 @@
-import request from 'supertest';
-import mockingoose from 'mockingoose';
-import app from '../../src/app';
-import BookModel from '../../src/models/Book';
+import request from 'supertest'
+import mockingoose from 'mockingoose'
+import Container from '../../src/container'
+import BookModel from '../../src/models/Book'
+
+const container = new Container()
+const { app } = container
 
 describe('test mongoose User model', () => {
   test('should return the doc with findById', () => {
     const returnValue = {
       _id: '507f191e810c19729de860ea',
       name: 'name',
-      author: 'author'
-    };
+      author: 'author',
+    }
 
-    mockingoose(BookModel).toReturn(returnValue, 'findOne');
+    mockingoose(BookModel).toReturn(returnValue, 'findOne')
 
     return BookModel.findById({ _id: '507f191e810c19729de860ea' }).then(doc => {
-      expect(JSON.parse(JSON.stringify(doc))).toMatchObject(returnValue);
-    });
-  });
+      expect(JSON.parse(JSON.stringify(doc))).toMatchObject(returnValue)
+    })
+  })
 
   // test('should return the doc with update', () => {
   //   const _doc = {
@@ -34,4 +37,4 @@ describe('test mongoose User model', () => {
   //       expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
   //     });
   // });
-});
+})
