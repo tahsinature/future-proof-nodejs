@@ -3,9 +3,7 @@ import swaggerUi, { SwaggerUiOptions } from 'swagger-ui-express'
 const apiSpec = require('@root/openapi.json')
 import * as BookController from '@src/controllers/book'
 
-const swaggerUiOptions: SwaggerUiOptions = {
-  customCss: '.swagger-ui .topbar { display: none }',
-}
+const swaggerUiOptions: SwaggerUiOptions = { customCss: '.swagger-ui .topbar { display: none }' }
 
 const router = Router()
 

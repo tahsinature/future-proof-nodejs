@@ -1,3 +1,4 @@
+# node version from docker-compose
 language: node_js
 node_js:
   - 12
