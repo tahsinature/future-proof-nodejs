@@ -8,9 +8,9 @@ export default class ApplicationError extends Error {
 
   public flag: string
 
-  constructor(status?: number, option?: IApplicationErrorOption) {
+  constructor(option: IApplicationErrorOption = {}) {
     super()
-    if (status) this.status = status
+    if (option.httpCode) this.status = option.httpCode
     if (option.message) this.message = option.message
     if (option.flag) this.flag = option.flag
   }

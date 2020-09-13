@@ -7,7 +7,7 @@ export default class extends BaseController {
   requestValidationSchema = {
     body: Joi.object({}),
     query: Joi.object({}),
-    header: Joi.object({}),
+    header: Joi.object({}).unknown(),
   }
 
   requestHandler = async (req: Request, res: Response) => {

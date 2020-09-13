@@ -5,7 +5,10 @@ import Book from '../../models/Book'
 
 export default class extends BaseController {
   requestValidationSchema = {
-    body: Joi.object({}).required(),
+    body: Joi.object({
+      name: Joi.string().required(),
+      author: Joi.string().required(),
+    }).required(),
     query: Joi.object({}).required(),
     header: Joi.object({}).required().unknown(),
   }

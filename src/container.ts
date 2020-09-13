@@ -25,7 +25,7 @@ app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
 
   if (err instanceof ApplicationError) res.status(err.status).json(err)
   else {
-    res.status(500).json(new ApplicationError(500, { flag: errCodes.INTERNAL_SERVER_ERROR }))
+    res.status(500).json(new ApplicationError({ flag: errCodes.INTERNAL_SERVER_ERROR, httpCode: 500 }))
     logger.log({ level: 'error', message: 'Error in request handler', error: err })
   }
 })
