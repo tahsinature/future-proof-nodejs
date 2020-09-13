@@ -1,10 +1,19 @@
-import { RequestHandler } from 'express'
-import requestMiddleware from '../../middleware/request-middleware'
+import { BaseController } from '@root/src/controllers/baseController'
+import { Request, Response } from 'express'
+import Joi from 'joi'
 import Book from '../../models/Book'
 
-const all: RequestHandler = async (req, res) => {
-  const books = await Book.find()
-  res.send({ books })
-}
+export default class extends BaseController {
+  requestValidationSchema = {
+    body: Joi.object({}),
+    query: Joi.object({}),
+    header: Joi.object({}),
+  }
 
-export default requestMiddleware(all)
+  requestHandler = async (req: Request, res: Response) => {
+    await this.validateRequest(req, this.requestValidationSchema)
+
+    const books = await Book.find()
+    res.send({ books })
+  }
+}

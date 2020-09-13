@@ -1,5 +1,11 @@
-import add from './add'
-import all from './all'
-import search from './search'
+import Add from './add'
+import All from './all'
+import Search from './search'
 
-export { add, all, search }
+const bookControllers = {
+  add: new Add(),
+  all: new All(),
+  search: new Search(),
+}
+
+export default bookControllers
