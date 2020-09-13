@@ -25,7 +25,7 @@ interface HandlerOptions {
 export const relogRequestHandler = (handler: RequestHandler, options?: HandlerOptions): RequestHandler => async (req: Request, res: Response, next: NextFunction) => {
   if (options?.validation?.body) {
     const { error } = options?.validation?.body.validate(req.body)
-    if (error) return next(new BadRequest(getMessageFromJoiError(error)))
+    if (error) return next(new BadRequest({ message: getMessageFromJoiError(error) }))
   }
 
   return handler(req, res, next).catch((err: Error) => {

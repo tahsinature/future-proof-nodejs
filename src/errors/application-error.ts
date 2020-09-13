@@ -1,11 +1,17 @@
+import errCodes from '@root/src/errors/error-codes'
+import { IApplicationErrorOption } from '@root/src/interfaces/IMixed'
+
 export default class ApplicationError extends Error {
   public message: string = 'ApplicationError'
 
   public status: number = 500
 
-  constructor(message?: string, status?: number) {
+  public flag: string
+
+  constructor(option: IApplicationErrorOption = {}) {
     super()
-    if (message) this.message = message
-    if (status) this.status = status
+    if (option.httpCode) this.status = option.httpCode
+    if (option.message) this.message = option.message
+    if (option.flag) this.flag = option.flag
   }
 }

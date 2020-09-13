@@ -1,23 +1,29 @@
-import { RequestHandler } from 'express'
+import { BaseController } from '@root/src/controllers/baseController'
+import { Request, Response } from 'express'
 import Joi from 'joi'
-import requestMiddleware from '../../middleware/request-middleware'
 import Book from '../../models/Book'
 
-export const addBookSchema = Joi.object().keys({
-  name: Joi.string().required(),
-  author: Joi.string().required(),
-})
+export default class extends BaseController {
+  requestValidationSchema = {
+    body: Joi.object({
+      name: Joi.string().required(),
+      author: Joi.string().required(),
+    }).required(),
+    query: Joi.object({}).required(),
+    header: Joi.object({}).required().unknown(),
+  }
 
-const add: RequestHandler = async (req, res) => {
-  const { name, author } = req.body
+  requestHandler = async (req: Request, res: Response) => {
+    await this.validateRequest(req, this.requestValidationSchema)
 
-  const book = new Book({ name, author })
-  await book.save()
+    const { name, author } = req.body
 
-  res.send({
-    message: 'Saved',
-    book: book.toJSON(),
-  })
+    const book = new Book({ name, author })
+    await book.save()
+
+    res.send({
+      message: 'Saved',
+      book: book.toJSON(),
+    })
+  }
 }
-
-export default requestMiddleware(add, { validation: { body: addBookSchema } })
