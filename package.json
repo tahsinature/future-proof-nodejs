@@ -21,6 +21,7 @@
     "lint": "prettier --write ./src/**/*",
     "dev": "./scripts/dev.sh",
     "start": "./bin/run",
+    "seed-db": "./bin/seed-db",
     "test": "jest"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "@types/compression": "1.7.0",
     "@types/dotenv": "8.2.0",
     "@types/express": "4.17.6",
+    "@types/faker": "^5.1.2",
     "@types/jest": "26.0.0",
     "@types/mongoose": "5.7.27",
     "@types/morgan": "^1.9.1",
@@ -47,6 +49,7 @@
     "@types/supertest": "2.0.9",
     "@types/swagger-ui-express": "4.1.2",
     "@zerollup/ts-transform-paths": "^1.7.18",
+    "faker": "^5.1.0",
     "jest": "26.1.0",
     "jest-express": "1.12.0",
     "mockingoose": "2.13.2",
