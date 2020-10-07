@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const project = path.join(process.cwd(), 'tsconfig.json')
+const dev = fs.existsSync(project)
+let workDir = 'dist'
+
+if (dev) {
+  require('ts-node').register({ project, compiler: 'ttypescript' })
+  workDir = 'src'
+}
+
+const Container = require(`../${workDir}/container`)
+const seed = require(`../${workDir}/seeders`)
+
+const container = new Container()
+
+container.load().then(async () => {
+  await seed()
+  await container.stop()
+})
