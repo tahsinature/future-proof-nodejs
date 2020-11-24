@@ -14,7 +14,7 @@ export default class extends BaseController {
   }
 
   requestHandler = async (req: Request, res: Response) => {
-    await this.validateRequest(req, this.requestValidationSchema)
+    await this.validateRequest(req)
 
     const { name, author } = req.body
 

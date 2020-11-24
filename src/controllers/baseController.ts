@@ -12,16 +12,16 @@ interface IRequestValidationSchema {
 export abstract class BaseController {
   requestValidationSchema: IRequestValidationSchema
 
-  validateRequest = async (req: Request, schema: IRequestValidationSchema) => {
+  validateRequest = async (req: Request) => {
     const { query, body, headers } = req
 
-    await schema.query.validateAsync(query).catch(error => {
+    await this.requestValidationSchema.query.validateAsync(query).catch(error => {
       throw new BadRequest({ message: error.message, flag: errCodes.INVALID_QUERY_PARAM })
     })
-    await schema.body.validateAsync(body).catch(error => {
+    await this.requestValidationSchema.body.validateAsync(body).catch(error => {
       throw new BadRequest({ message: error.message, flag: errCodes.INVALID_BODY })
     })
-    await schema.header.validateAsync(headers).catch(error => {
+    await this.requestValidationSchema.header.validateAsync(headers, { allowUnknown: true }).catch(error => {
       throw new BadRequest({ message: error.message, flag: errCodes.INVALID_HEADER })
     })
   }

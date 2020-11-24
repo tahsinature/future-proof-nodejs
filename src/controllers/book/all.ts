@@ -11,7 +11,7 @@ export default class extends BaseController {
   }
 
   requestHandler = async (req: Request, res: Response) => {
-    await this.validateRequest(req, this.requestValidationSchema)
+    await this.validateRequest(req)
 
     const books = await Book.find()
     res.send({ books })
